@@ -5,6 +5,9 @@ def ispalindrome(p):
 
     #p = str.replace("!@#$%^&*()[]{};:,./<>?\|`~-=_+", " ")
 
+    p = p.translate(p.maketrans("", "","!@#$%^&*()[];:,./<>?`~-=_+ "))
+    p = p.lower()
+    
     if p == "" or len(p) == 1:
         return True
 
