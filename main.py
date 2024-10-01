@@ -3,9 +3,15 @@
 
 def ispalindrome(p):
 
-    # votre code ici
+    #p = str.replace("!@#$%^&*()[]{};:,./<>?\|`~-=_+", " ")
+
+    if p == "" or len(p) == 1:
+        return True
+
+    if p[0] != p[-1]:
+        return False
     
-    return False
+    return ispalindrome(p[1:-1])
 
 #### Fonction principale
 
