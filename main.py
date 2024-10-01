@@ -3,9 +3,18 @@
 
 def ispalindrome(p):
 
-    # votre code ici
+    #p = str.replace("!@#$%^&*()[]{};:,./<>?\|`~-=_+", " ")
+
+    p = p.translate(p.maketrans("ÉéÀÂâàêèëËôÔç", "eeaaaaeeeeooc","!@#$%^&*()[];:,./<>?`'~-=_+ "))
+    p = p.lower()
+
+    if p == "" or len(p) == 1:
+        return True
+
+    if p[0] != p[-1]:
+        return False
     
-    return False
+    return ispalindrome(p[1:-1])
 
 #### Fonction principale
 
